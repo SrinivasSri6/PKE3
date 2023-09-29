@@ -42,27 +42,9 @@ function test() {
           console.log(`Image loaded: ${img.src}`);
           console.log(`Image loaded: ${loadedImages}/${totalImages}`);
 
-          // if (loadedImages === totalImages) {
-          //   console.log('All images loaded. Redirecting...');
-          //   resolve(true);
-          // }
-
           if (loadedImages === totalImages) {
-
             console.log('All images loaded. Redirecting...');
-
             resolve(true);
-
-          }
-
-          else {
-
-            setTimeout(function () {
-
-              resolve(true);
-
-            }, 10000);
-
           }
         });
 
