@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.62f5d59a.css",
+    "main.js": "/static/js/main.135ed4b4.js",
+    "static/js/787.adeb7fd1.chunk.js": "/static/js/787.adeb7fd1.chunk.js",
+    "static/media/start-bg.png": "/static/media/start-bg.d7280255b91504c0bb7c.png",
+    "static/media/pineapple-icon.png": "/static/media/pineapple-icon.524919d48764406166ce.png",
+    "index.html": "/index.html",
+    "main.62f5d59a.css.map": "/static/css/main.62f5d59a.css.map",
+    "main.135ed4b4.js.map": "/static/js/main.135ed4b4.js.map",
+    "787.adeb7fd1.chunk.js.map": "/static/js/787.adeb7fd1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62f5d59a.css",
+    "static/js/main.135ed4b4.js"
+  ]
+}

@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../assets/pineapple-icon.ico" />
+  <link rel="stylesheet" href="./home/style.css?version=3" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+  <link href="https://v1.fontapi.ir/css/SFProDisplay" rel="stylesheet" crossorigin="anonymous">
+
+
+  <title>Pineapple Kichadi</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <div class="logo_bg">
+          <img src="../assets/logo.png" alt="Pineapple Logo" class="pineapple-logo">
+          <img src="../assets/logo_bg.png" alt="Pineapple Logo" class="pke_logo_bg">
+        </div>
+      </a>
+
+
+      <button class='btn navbar-toggler navbar-btn pull-right' id='toggle' type='button'>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+        </svg>
+      </button>
+      <div class="collapse navbar-collapse " id="mynavbar">
+        <ul class="navbar-nav ms-auto align-items-md-end">
+          <li class=nav-item><a class=nav-link id=our-home href="/home">Home</a></li>
+          <li class=nav-item><a class=nav-link id=our-story-nav>Our Story</a></li>
+          <li class=nav-item><a class=nav-link id=our-services-nav>Services</a></li>
+          <li class=nav-item><a class=nav-link id=our-crew-nav>Crew</a></li>
+          <li class=nav-item><a class=nav-link id=our-newsroom-nav>Newsroom</a></li>
+          <li class=nav-item><a id=contact-btn class="btn btn-outline-warning">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="overlay mob_navbar" id="overlay">
+    <div class="logo_bg">
+      <img src="../assets/logo_w.png" alt="Pineapple Logo" class="pineapple-logo">
+    </div>
+    <nav class="overlay-menu">
+      <ul>
+        <li><a id="home-mob" href="/home">Home</a></li>
+        <li><a id="our-story-mob">Our Story</a></li>
+        <li><a id="our-ser-mob">Services</a></li>
+        <li><a id="our-crew-mob">Crew</a></li>
+        <li><a id="our-news-mob">Newsroom</a></li>
+        <li><a id=contact-btn1 class="btn btn-outline-warning px-4 py-3">Contact Us</a></li>
+        <li><a id="nav_close" class="mt-4">
+            <img class="nav_close_img" src="../assets/close.png">
+          </a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <canvas class="canvas"></canvas>
+
+  <style>
+    @media (max-width: 767.99px) and (min-width: 320px) {
+
+      .canvas,
+      .d_view,
+      .container_mouse,
+      .footer {
+        display: none;
+      }
+
+      .logo_bg {
+        top: 31px;
+        left: 10px;
+        /*padding: unset */
+      }
+
+      .pke_logo_bg {
+        width: 120px;
+        height: 40px;
+        top: 35px;
+      }
+
+      .pineapple-logo {
+        height: 65px !important;
+      }
+
+      .heading1 {
+        font-size: 28px;
+        line-height: 38px;
+        font-weight: 800;
+        color: #1c0227;
+        text-shadow: 2px 2px 32px #ffffffc2;
+      }
+
+      .heading2,
+      .heading3,
+      .heading4,
+      .heading5,
+      .heading6,
+      .heading7 {
+        font-size: 22px;
+        line-height: 34px;
+        font-weight: 800;
+        color: #1c0227;
+        text-shadow: 2px 2px 32px #ffffffc2;
+      }
+
+      #storymodal h3,
+      #storymodal1 h3 {
+        font-size: 20px;
+        line-height: 34px;
+        font-weight: 800;
+        color: #fff;
+      }
+
+      .heading2_t,
+      .heading5_t,
+      .heading6_t,
+      .heading7_t,
+      #storymodal h5,
+      #storymodal1 h5 {
+        font-size: 15px;
+        color: #FFBC09;
+        text-shadow: 2px 2px 32px #ffffffc2;
+      }
+
+      .para1,
+      .para2,
+      .para5,
+      .para6,
+      .para7 {
+        font-size: 12px;
+        line-height: 25px;
+        color: #1c0227;
+        text-shadow: 2px 2px 32px #ffffffc2;
+      }
+
+      #storymodal p,
+      #storymodal1 p {
+        font-size: 12px;
+        line-height: 25px;
+        color: #fff;
+      }
+
+      .footer .copyright-box {
+        padding: 8px 15px;
+        font-size: 8px;
+      }
+
+      #parallax,
+      #parallax1,
+      #parallax2,
+      #parallax3,
+      #parallax4,
+      #parallax5,
+      #parallax6 {
+        background-size: cover !important;
+        height: -webkit-fill-available;
+        min-height: 100vh;
+        /* top: unset; */
+        /* position: sticky !important; */
+        display: flex;
+        /* align-items: center; */
+        text-align: center;
+        padding: 0px 35px;
+
+      }
+
+      #parallax {
+        background: url('../mob_img/pke_screen_1.jpg');
+      }
+
+      #parallax1 {
+        background: url('../mob_img/pke_screen_2.jpg');
+      }
+
+      #parallax2 {
+        background: url('../mob_img/pke_screen_3.jpg');
+      }
+
+      #parallax3 {
+        background: url('../mob_img/pke_screen_5.jpg');
+      }
+
+      #parallax4 {
+        background: url('../mob_img/pke_screen_6.jpg');
+      }
+
+      #parallax5 {
+        background: url('../mob_img/pke_screen_7.jpg');
+      }
+
+      /* #parallax6 {
+
+        background: url('../mob_img/pke_screen_7.jpg');
+      } */
+
+      .frame1 {
+        position: fixed;
+        top: 0;
+      }
+
+      .frame2 {
+        margin-top: 99.99vh;
+      }
+
+      .fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-top: 0px !important;
+      }
+
+      .frame1 {
+        z-index: -7;
+      }
+
+      .frame2 {
+        z-index: -6;
+      }
+
+      .frame3 {
+        z-index: -5;
+      }
+
+      .frame4 {
+        z-index: -4;
+      }
+
+      .frame5 {
+        z-index: -3;
+      }
+
+      .frame6 {
+        z-index: -2;
+      }
+
+      .frame7 {
+        z-index: -1;
+      }
+
+      #turn_mob {
+        background-color: #1c0227;
+      }
+
+      .frame_landscape {
+        width: 100%;
+        height: -webkit-fill-available;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0px 5px;
+      }
+
+      .mob_l_para {
+        color: #fff;
+      }
+
+      #myCarousel img{
+        height: 400px !important;
+      }
+      .carousel-control-next{
+        right: 0 !important;
+      }
+
+      .left-name {
+        left: 10px;
+      }
+
+      .left-desig {
+        left: 10px;
+        top: unset;
+        margin-top: 8px;
+      }
+
+      .pineapple-crew, .pineapple-crew1 {
+        bottom: 10%;
+        top: unset;
+        left: 255px;
+      }
+      
+      
+      .left_team{
+        justify-content: unset;
+      }
+      .right-name{
+        left: 10px;
+      }
+      .right-desig{
+        left: 10px;
+        top: unset;
+        margin-top: 8px;
+      }
+      
+      .right-desig br, .right-name br {
+        display: none;
+      }
+      .our-story-modal{
+        justify-content: center !important;
+      }
+      .modal-subtitle{
+        font-size: 15px;
+        line-height: 20px;
+      }
+      .img-fluid{
+        width: 100% !important;
+      }
+      .viewmorebtn{
+        border: 1px solid #1c0227 !important;
+        font-size: 11px !important;
+      }
+      .violet-rectangle, .violet-rectangle1{
+        width: 100%;
+        height: auto;
+      }
+
+
+
+    }
+
+    /* ========================landscape control start====================== */
+    @media only screen and (orientation:landscape) {
+      #turn_mob {
+        display: block;
+      }
+
+      #c-wrap {
+        display: none;
+      }
+    }
+
+    @media only screen and (orientation:portrait) {
+      #turn_mob {
+        display: none;
+      }
+
+      #c-wrap {
+        display: block;
+      }
+    }
+
+    /* ========================landscape control end====================== */
+  </style>
+
+  <div class="container"></div>
+
+  <!-- mobile view code start -->
+
+  <div class="" id="turn_mob">
+    <div class="container frame_landscape">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 ">
+          <p class="mob_l_para  text-md-center  text-lg-start">Please rotate your device!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="" id="c-wrap">
+
+    <div class="container frame1" id="parallax">
+
+      <div class="row">
+        <div class="col-sm-1 col-md-1 col-lg-4 col-xl-5 col-xxl-6"></div>
+
+        <div class="col-sm-10 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+          <h2 class="heading1  text-md-center text-lg-start">Bringing joy to everyday </h2>
+          <p class="para1  text-md-center  text-lg-start">Your playground of entertainment</p>
+        </div>
+
+        <div class="col-sm-1 col-md-1 d-lg-none d-xl-none"></div>
+      </div>
+
+
+    </div>
+
+    <div class="container frame2" id="parallax1">
+
+      <div class="row">
+        <div class="col-sm-1 col-md-1 col-lg-2"></div>
+        <div class="col-sm-10 col-md-10 col-lg-8">
+          <h2 class="heading2">Where Entertainment Meets Fun and
+            Laughter</h2>
+          <p class="para2">By connecting people through fun and entertainment, we
+            are a space for the world to enjoy the mundane.</p>
+        </div>
+        <div class="col-sm-1 col-md-1 col-lg-2"></div>
+      </div>
+    </div>
+
+
+    <div class="container frame3" id="parallax2">
+      <div class="row">
+        <div class="col-sm-1 col-md-1 col-lg-2"></div>
+        <div class="col-sm-10 col-md-10 col-lg-8">
+
+          <h6 class="heading2_t">Our Story</h6>
+          <h2 class="heading2">From Mundane To Memorable: Our Unforgettable Entertainment</h2>
+          <p class="para2">A Drive To Entertainment: Serving laughter and inspiration</p>
+          <button id="mobstorybtn" class="viewmorebtn btn rounded-pill ">VIEW MORE &nbsp;&nbsp;&gt;</button>
+
+        </div>
+
+        <div class="col-sm-1 col-md-1 col-lg-2"></div>
+      </div>
+    </div>
+
+    <div class="container frame4" id="parallax3">
+
+      <div class="row">
+        <div class="col-sm-1 col-md-1 col-lg-2"></div>
+        <div class="col-sm-10 col-md-10 col-lg-8">
+
+          <h6 class="heading5_t">Our Service</h6>
+          <h2 class="heading5">Immersive and Engaging: Our Engrossing Services</h2>
+          <p class="para5">As a new-age digital platform, we offer a wide range of curated and personalized content
+            to
+            keep you entertained - the ones that are fresher and better.</p>
+          <button id="mobservicebtn" class="viewmorebtn btn rounded-pill">VIEW MORE &nbsp;&nbsp;&gt;</button>
+        </div>
+        <div class="col-sm-1 col-md-1 col-lg-2"></div>
+      </div>
+    </div>
+
+    <div class="container frame5" id="parallax4">
+
+      <div class="row">
+        <div class="col-sm-1 col-md-1 col-lg-1"></div>
+        <div class="col-sm-10 col-md-10 col-lg-10">
+          <h6 class="heading6_t">Crew</h6>
+          <h2 class="heading6">The Creative Ensemble: The Collaborative Dream Team</h2>
+          <p class="para6">Our Behind-The Scenes Creators. Our team of professionals who are making the magic happen
+            for you to get entertained.</p>
+          <button id="mobcrewbtn" class="viewmorebtn btn rounded-pill">VIEW MORE &nbsp;&nbsp;&gt;</button>
+        </div>
+        <div class="col-sm-1 col-md-1 col-lg-1"></div>
+      </div>
+    </div>
+
+    <div class="container frame6" id="parallax5">
+
+      <div class="row">
+        <div class="col-sm-1 col-md-1 col-lg-2"></div>
+        <div class="col-sm-10 col-md-10 col-lg-8">
+          <h6 class="heading7_t">Newsroom</h6>
+          <h2 class="heading7">Behind The Curtains: Our Newsroom Chronicles</h2>
+          <p class="para7">Everything about our press releases is found here.</p>
+          <button id="mobnewsroombtn" class="viewmorebtn btn rounded-pill">VIEW MORE &nbsp;&nbsp;&gt;</button>
+        </div>
+        <div class="col-sm-1 col-md-1 col-lg-2"></div>
+      </div>
+    </div>
+
+  </div>
+  <!-- mobile view code end -->
+
+
+
+  <div class="d_view">
+
+    <div class="first-content-block">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-1 col-md-1 col-lg-4 col-xl-5 col-xxl-6"></div>
+              <div class="col-sm-10 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                  <h1 class="txtH1 text-md-center text-lg-start" id="txtH1">Bringing joy to everyday </h1>
+                  <p class="txtpara1 text-md-center text-lg-start">Your playground of entertainment</p>
+              </div>
+              <div class="col-sm-1 col-md-1 d-lg-none d-xl-none"></div>
+          </div>
+      </div>
+  </div>
+
+
+    <div class="first-content-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-1 col-md-1 col-lg-4 col-xl-6 col-xxl-6"></div>
+
+          <div class="col-sm-10 col-md-10 col-lg-8 col-xl-6 col-xxl-6 pe-xxl-5">
+            <h1 class="text-heading1  text-md-center text-lg-start" id="textHeading1">Where Entertainment Meets Fun and
+              Laughter</h1>
+            <p class="text-para1  text-md-center  text-lg-start">By connecting people through fun and entertainment, we
+              are a space for the world to enjoy the mundane.</p>
+          </div>
+
+          <div class="col-sm-1 col-md-1 d-lg-none d-xl-none"></div>
+        </div>
+      </div>
+    </div>
+    
+
+
+
+    <!-- OUR STORY -->
+    <div id="our-story-section">
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-4">
+          &emsp;
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+          <div class="our-story">
+            <div class="our-story-touchpoint">
+              <div class="our-story-line"></div>
+              <div class="our-story-pulsating-circle"></div>
+
+              <p class="our-story-touchpoint"><img class="touch-point-icon" src="../assets/pineapple-half.png"><span
+                  class="our-story-span">&ensp;Our Story</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6  col-xl-6 col-xxl-3">
+          &emsp;
+        </div>
+      </div>
+
+    </div>
+
+    <div class="our-story-content-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-1 col-md-1 col-lg-2"></div>
+          <div class="col-sm-10 col-md-10 col-lg-8">
+            <h6 class="oscb-h5">Our Story</h6>
+            <h2 class="oscb-h1">From Mundane To Memorable: Our Unforgettable Entertainment</h2>
+            <p class="oscb-p">A Drive To Entertainment: Serving laughter and inspiration</p>
+            <button class="viewmorebtn btn rounded-pill" id="storybtn">VIEW MORE &nbsp;&nbsp;&gt;</button>
+          </div>
+          <div class="col-sm-1 col-md-1 col-lg-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUR STORY -->
+
+    <div class="after-our-story">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-1 col-md-1 col-lg-2"></div>
+          <div class="col-sm-10 col-md-10 col-lg-8">
+            <div class="text-box2">
+              <h2 class="text-heading2" id="textHeading2">
+                Delightful Fusion of Laughter, Spice, and Sweetness
+              </h2>
+            </div>
+
+            <div class="text-box3">
+              <h2 class="text-heading3" id="textHeading3">
+                Keeping entertainment simple<br> where there is something for everyone.
+              </h2>
+            </div>
+
+          </div>
+
+          <div class="col-sm-1 col-md-1 col-lg-2"></div>
+        </div>
+      </div>
+    </div>
+    <!--  Our Service -->
+
+    <div id="our-service-section">
+
+
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-4">
+          &emsp;
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+          <div class="our-story">
+            <div class="our-story-touchpoint">
+              <div class="our-story-line"></div>
+              <div class="our-story-pulsating-circle"></div>
+
+              <p class="our-story-touchpoint"><img class="touch-point-icon" src="../assets/pineapple-half.png"><span
+                  class="our-story-span">&ensp;Our Service</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-4">
+          &emsp;
+        </div>
+      </div>
+
+    </div>
+
+    <div class="our-service-content-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-1 col-md-1 col-lg-2"></div>
+          <div class="col-sm-10 col-md-10 col-lg-8">
+
+            <h6 class="osercb-h5">Our Service</h6>
+            <h2 class="osercb-h1">Immersive and Engaging: Our Engrossing Services</h2>
+            <p class="osercb-p">As a new-age digital platform, we offer a wide range of curated and personalized content
+              to
+              keep you entertained - the ones that are fresher and better.</p>
+            <button class="viewmorebtn btn rounded-pill" id="servicebtn">VIEW MORE &nbsp;&nbsp;&gt;</button>
+          </div>
+          <div class="col-sm-1 col-md-1 col-lg-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--  Our Service -->
+
+    <!--  Our Team -->
+
+    <div id="our-team-section">
+
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-4">
+          &emsp;
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+          <div class="our-story">
+            <div class="our-story-touchpoint">
+              <div class="our-story-line"></div>
+              <div class="our-story-pulsating-circle"></div>
+
+              <p class="our-story-touchpoint"><img class="touch-point-icon" src="../assets/pineapple-half.png"><span
+                  class="our-story-span">&ensp;Crew</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-4">
+          &emsp;
+        </div>
+      </div>
+
+    </div>
+
+    <div class="our-team-content-block">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-1 col-md-1 col-lg-2"></div>
+          <div class="col-sm-10 col-md-10 col-lg-8">
+            <h6 class="otcb-h5">Crew</h6>
+            <h2 class="otcb-h1">The Creative Ensemble: The Collaborative Dream Team</h2>
+            <p class="otcb-p">Our Behind-The Scenes Creators. Our team of professionals who are making the magic happen
+              for you to get entertained.</p>
+            <button class="viewmorebtn btn rounded-pill" id="teambtn">VIEW MORE &nbsp;&nbsp;&gt;</button>
+          </div>
+          <div class="col-sm-1 col-md-1 col-lg-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--  Our Team -->
+
+    <!--  Newsroom -->
+
+    <div id="our-newsroom-section">
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-4">
+          &emsp;
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+          <div class="our-story">
+            <div class="our-story-touchpoint">
+              <div class="our-story-line"></div>
+              <div class="our-story-pulsating-circle"></div>
+
+              <p class="our-story-touchpoint"><img class="touch-point-icon" src="../assets/pineapple-half.png"><span
+                  class="our-story-span">&ensp;Newsroom</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-4">
+          &emsp;
+        </div>
+      </div>
+
+    </div>
+
+    <div class="our-newsroom-content-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-1 col-md-1 col-lg-2"></div>
+          <div class="col-sm-10 col-md-10 col-lg-8">
+            <h6 class="oncb-h5">Newsroom</h6>
+            <h2 class="oncb-h1">Behind The Curtains: Our Newsroom Chronicles</h2>
+            <p class="oncb-p">Everything about our press releases is found here.</p>
+            <button class="viewmorebtn btn rounded-pill" id="newsroombtn">VIEW MORE &nbsp;&nbsp;&gt;</button>
+          </div>
+          <div class="col-sm-1 col-md-1 col-lg-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Newsroom -->
+
+  <div class="container_mouse">
+    <span class="scrolldown">Scroll</span>
+    <div class="progress-bar-container-mouse">
+      <div class="progress-bar-mouse"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="copyright-box">
+      © 2023 Pineapple Kichadi | Privacy Policy
+    </div>
+  </div>
+
+  <div class="modal fade" id="storymodal" tabindex="-1" aria-labelledby="fullScreenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>&nbsp;&nbsp;<span
+            data-bs-dismiss="modal" class="close">Close</span>
+        </div>
+        <div class="p-0 modal-body">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="storymodal1" tabindex="-1" aria-labelledby="fullScreenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="stoclose btn-close" data-bs-dismiss="modal"
+            aria-label="Close"></button>&nbsp;&nbsp;<span data-bs-dismiss="modal" class="storyclose close">Close</span>
+        </div>
+        <div class="p-0 modal-body">
+
+          <style>
+            /* -------------------------------slider start--------------------------- */
+
+            #myCarousel img {
+              /* height: 380px; */
+            }
+
+            #myCarousel {
+              position: absolute;
+              padding: 0px;
+            }
+
+            .carousel-control-next {
+              position: absolute;
+              right: 150px;
+              display: -webkit-inline-box;
+            }
+
+            .card {
+              background: unset !important;
+            }
+
+            .card-text-bottom {
+              .card-img-overlay {
+                padding: 0;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 0%, rgb(28 2 39 / 35%), rgb(28 2 39 / 65%), rgb(93 73 101 / 95%) 100%);
+                text-align: center;
+              }
+
+              .card-img-overlay .card-title {
+                position: relative;
+                top: 85%;
+                color: #fff;
+                text-decoration: none;
+                font-size: 24px;
+              }
+            }
+
+
+            @media (max-width: 992px) and (min-width: 767.99px) {
+
+              .carousel-control-next {
+                right: 20px;
+              }
+
+
+              .carousel-inner .carousel-item-right.active,
+              .carousel-inner .carousel-item-next,
+              .carousel-item-next:not(.carousel-item-start) {
+                transform: translateX(33.33%) !important;
+              }
+
+              .carousel-inner .carousel-item-left.active,
+              .carousel-item-prev:not(.carousel-item-end),
+              .active.carousel-item-start,
+              .carousel-item-prev:not(.carousel-item-end) {
+                transform: translateX(-33.33%) !important;
+              }
+
+              .carousel-item-next.carousel-item-start,
+              .active.carousel-item-end {
+                transform: translateX(0) !important;
+              }
+
+              .carousel-inner .carousel-item-prev,
+              .carousel-item-prev:not(.carousel-item-end) {
+                transform: translateX(-33.33%) !important;
+              }
+
+            }
+
+
+            @media (max-width: 1200px) and (min-width: 991.99px) {
+
+              .carousel-control-next {
+                right: 20px;
+              }
+
+              .carousel-inner .carousel-item-right.active,
+              .carousel-inner .carousel-item-next,
+              .carousel-item-next:not(.carousel-item-start) {
+                transform: translateX(25%) !important;
+              }
+
+              .carousel-inner .carousel-item-left.active,
+              .carousel-item-prev:not(.carousel-item-end),
+              .active.carousel-item-start,
+              .carousel-item-prev:not(.carousel-item-end) {
+                transform: translateX(-25%) !important;
+              }
+
+              .carousel-item-next.carousel-item-start,
+              .active.carousel-item-end {
+                transform: translateX(0) !important;
+              }
+
+              .carousel-inner .carousel-item-prev,
+              .carousel-item-prev:not(.carousel-item-end) {
+                transform: translateX(-25%) !important;
+              }
+
+            }
+
+
+            @media (max-width: 1400px) and (min-width: 1199.99px) {
+
+              .carousel-control-next {
+                right: 20px;
+              }
+
+              .carousel-inner .carousel-item-right.active,
+              .carousel-inner .carousel-item-next,
+              .carousel-item-next:not(.carousel-item-start) {
+                transform: translateX(25%) !important;
+              }
+
+              .carousel-inner .carousel-item-left.active,
+              .carousel-item-prev:not(.carousel-item-end),
+              .active.carousel-item-start,
+              .carousel-item-prev:not(.carousel-item-end) {
+                transform: translateX(-25%) !important;
+              }
+
+              .carousel-item-next.carousel-item-start,
+              .active.carousel-item-end {
+                transform: translateX(0) !important;
+              }
+
+              .carousel-inner .carousel-item-prev,
+              .carousel-item-prev:not(.carousel-item-end) {
+                transform: translateX(-25%) !important;
+              }
+
+            }
+
+            @media (max-width: 2400px) and (min-width: 1399.99px) {
+              .carousel-control-next {
+                right: 10%;
+              }
+
+              .carousel-inner .carousel-item-right.active,
+              .carousel-inner .carousel-item-next,
+              .carousel-item-next:not(.carousel-item-start) {
+                transform: translateX(16.66%) !important;
+              }
+
+              .carousel-inner .carousel-item-left.active,
+              .carousel-item-prev:not(.carousel-item-end),
+              .active.carousel-item-start,
+              .carousel-item-prev:not(.carousel-item-end) {
+                transform: translateX(-16.66%) !important;
+              }
+
+              .carousel-item-next.carousel-item-start,
+              .active.carousel-item-end {
+                transform: translateX(0) !important;
+              }
+
+              .carousel-inner .carousel-item-prev,
+              .carousel-item-prev:not(.carousel-item-end) {
+                transform: translateX(-16.66%) !important;
+              }
+
+            }
+
+            @media (max-width: 767px) {
+              .carousel-inner .carousel-item>div {
+                display: none;
+              }
+
+              .carousel-inner .carousel-item>div:first-child {
+                display: block;
+              }
+            }
+
+            .carousel-inner .carousel-item.active,
+            .carousel-inner .carousel-item-start,
+            .carousel-inner .carousel-item-next,
+            .carousel-inner .carousel-item-prev {
+              display: flex;
+              transition-duration: 0.5s;
+            }
+          </style>
+
+
+
+          <div class="container-fluid p-1">
+            <div class="our-story-modal p-5">
+
+              <div class="container ">
+                <h5 class="modal-title">Our Services</h5>
+
+                <p class="mt-3">As a new-age digital platform, we offer a wide range of curated and personalized content
+                  to keep you entertained- the ones that are fresher and better. Our services include:</p>
+
+              </div>
+
+              <div class="container">
+
+                <div id="myCarousel" class="carousel slide " data-bs-interval="false">
+                  <div class="carousel-inner w-100">
+
+                    <div class="carousel-item active">
+                      <div class="col-sm-2 col-md-4 col-lg-3 col-xl-3 col-xxl-2 px-2">
+                        <div class="card card-text-bottom card-inverse text-bottom">
+                          <img class="img-fluid h-100" src="../PKE Images/10.jpg">
+                          <div class="card-img-overlay card-gradient-bottom">
+                            <a href="#" class="card-title">Web Series</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="col-sm-2 col-md-4 col-lg-3 col-xl-3 col-xxl-2 px-2">
+                        <div class="card card-text-bottom card-inverse text-bottom">
+                          <img class="img-fluid  h-100" src="../PKE Images/9.jpg">
+                          <div class="card-img-overlay card-gradient-bottom">
+                            <a href="#" class="card-title">Short Films</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item ">
+                      <div class="col-sm-2 col-md-4 col-lg-3 col-xl-3 col-xxl-2 px-2">
+                        <div class="card card-text-bottom card-inverse text-bottom">
+                          <img class="img-fluid h-100" src="../PKE Images/8.jpg">
+                          <div class="card-img-overlay card-gradient-bottom">
+                            <a href="#" class="card-title">Animated Films</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="col-sm-2 col-md-4 col-lg-3 col-xl-3 col-xxl-2 px-2">
+                        <div class="card card-text-bottom card-inverse text-bottom">
+                          <img class="img-fluid h-100" src="../PKE Images/10.jpg">
+                          <div class="card-img-overlay">
+                            <a href="#" class="card-title">Advertising</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="col-sm-2 col-md-4 col-lg-3 col-xl-3 col-xxl-2 px-2">
+                        <div class="card card-text-bottom card-inverse text-bottom">
+                          <img class="img-fluid h-100" src="../PKE Images/7.jpg">
+                          <div class="card-img-overlay">
+                            <a href="#" class="card-title"> Advertising</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+
+
+              </div>
+              <br>
+              <br>
+              <br>
+
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+      <script src="./home/animation.js"></script>
+      <script src="./home/app.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+      <script src="./home/script.js?ver=7"></script>
+
+</body>
+
+</html>
